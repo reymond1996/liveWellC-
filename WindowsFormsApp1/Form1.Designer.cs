@@ -96,6 +96,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(135, 12);
             this.txtId.Name = "txtId";
+            this.txtId.ReadOnly = true;
             this.txtId.Size = new System.Drawing.Size(48, 20);
             this.txtId.TabIndex = 4;
             this.txtId.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
@@ -200,6 +201,7 @@
             // chkAtivo
             // 
             this.chkAtivo.AutoSize = true;
+            this.chkAtivo.Enabled = false;
             this.chkAtivo.Location = new System.Drawing.Point(356, 11);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);

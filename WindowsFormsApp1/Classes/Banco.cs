@@ -4,21 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using livecsharp.Classes;
 
-namespace WindowsFormsApp1.Classes
+namespace livecsharp.Classes
 {
     public static class Banco
     {
         public static MySqlCommand Abrir()
         {
-        MySqlCommand cmd = new MySqlCommand();
-        String strCon = @"server=127.0.0.1;database=liveescolardb,user id=root;port=3306;password=usbw;";
-        MySqlConnection cn = new MySqlConnection(strCon);
+            MySqlCommand cmd = new MySqlCommand();
+            string strCon = @"server=127.0.0.1;database=liveescolardb,user id=root;port=3306;password=usbw";
+            MySqlConnection cn = new MySqlConnection(strCon);
             cn.Open();
-         cmd.Connection = cn;
-        return cmd;
+            cmd.Connection = cn;
+            return cmd;
         }
+
     }
+
 }
 /*
  

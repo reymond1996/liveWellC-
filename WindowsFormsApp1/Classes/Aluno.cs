@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using livecsharp.Classes;
 
 namespace WindowsFormsApp1.Classes
 {
     public class Aluno
     { //metodos contrutor
-        public Aluno(int id=0, string nome=null, string email=null, string telefone=null, string senha=null, bool ativo=false)
+        public Aluno(int id = 0, string nome = null, string email = null, string telefone = null, string senha = null, bool ativo = false)
         {
             Id = id;
             Nome = nome;
@@ -26,9 +27,17 @@ namespace WindowsFormsApp1.Classes
         public string Senha { get; set; }
         public bool ativo { get; set; }
 
-    
-    public void Inserir()
-    {
-        var cmd = Banco.Abrir();
+
+        public void Inserir()
+        {
+            var cmd =   Banco.Abrir();
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.CommandText = "insert alunos values" +
+                "(null, '"+Nome+"','"+Email+"','"+Telefone+"',md5('"+Senha+"'),1)";
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select @@identity";
+            Id = Convert.ToInt32(cmd.ExecuteScalar()); //cast - parse - converte
+
+        }
     }
 }

@@ -70,7 +70,20 @@ namespace WindowsFormsApp1
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno();
+            Aluno aluno = new Aluno(
+                0, txtNome.Text, 
+                txtEmail.Text, 
+                txtTelefone.Text, 
+                txtSenha.Text,
+                true
+                );
+            aluno.Inserir();
+            txtId.Text = aluno.Id.ToString();
+        
+            MessageBox.Show("Aluno Inserido com Sucesso!");
+            txtNome.Clear();txtEmail.Clear();txtTelefone.Clear();
+            txtSenha.Clear(); txtConfirmaSenha.Clear();chkAtivo.Checked = false;
+            
         }
     }
 }
