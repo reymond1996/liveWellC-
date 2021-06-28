@@ -25,7 +25,13 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            lstLista.Items.Clear();
+            Aluno aluno = new Aluno();
+            var lista = aluno.ListaAlunos();
+            foreach (var item in lista)
+            {
+                lstLista.Items.Add(item.Nome + " - " + item.Email + " - " + item.Telefone);
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -70,20 +76,28 @@ namespace WindowsFormsApp1
 
         private void btnInserir_Click(object sender, EventArgs e)
         {
-            Aluno aluno = new Aluno(
-                0, txtNome.Text, 
-                txtEmail.Text, 
-                txtTelefone.Text, 
+            Aluno aluno = new Aluno(// CRC
+                0, txtNome.Text,
+                txtEmail.Text,
+                txtTelefone.Text,
                 txtSenha.Text,
                 true
                 );
             aluno.Inserir();
             txtId.Text = aluno.Id.ToString();
-        
             MessageBox.Show("Aluno Inserido com Sucesso!");
-            txtNome.Clear();txtEmail.Clear();txtTelefone.Clear();
-            txtSenha.Clear(); txtConfirmaSenha.Clear();chkAtivo.Checked = false;
-            
+            LimparCampos();
+
+
+        }
+
+
+        private void LimparCampos()
+        {
+            txtNome.Clear(); txtEmail.Clear(); txtTelefone.Clear();
+            txtSenha.Clear(); txtConfirmaSenha.Clear(); chkAtivo.Checked = false;
+            txtId.Clear();
+
         }
     }
 }

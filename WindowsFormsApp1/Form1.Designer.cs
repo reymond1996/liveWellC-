@@ -49,6 +49,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.txtConfirmaSenha = new System.Windows.Forms.TextBox();
+            this.lstLista = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -245,11 +246,20 @@
             this.txtConfirmaSenha.TabIndex = 5;
             this.txtConfirmaSenha.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // lstLista
+            // 
+            this.lstLista.FormattingEnabled = true;
+            this.lstLista.Location = new System.Drawing.Point(412, 209);
+            this.lstLista.Name = "lstLista";
+            this.lstLista.Size = new System.Drawing.Size(347, 95);
+            this.lstLista.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lstLista);
             this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.chkAtivo);
@@ -303,6 +313,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.TextBox txtConfirmaSenha;
+        private System.Windows.Forms.ListBox lstLista;
     }
 }
 
